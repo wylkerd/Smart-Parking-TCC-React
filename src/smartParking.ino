@@ -1,7 +1,6 @@
 /***********************************/
 /*          SMART PARKING          */
 /***********************************/
-// char result1[] = "{\"corredor\":1,\"sensor\":1,\"status\":\"livre\"}";
 
 //Configuração de Distancia Mínima em centimetros
 const int distancia_carro = 2;
@@ -21,6 +20,21 @@ const int ledRed1 = 8;
 
 const int ledGreen2 = 1;
 const int ledRed2 = 2;
+
+const int rows = 10;
+const int columns = 3;
+
+char status[rows][columns] = {
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'},
+    {1, 1, (char)'livre'}};
 
 void setup()
 {
@@ -45,10 +59,18 @@ void setup()
 
 void loop()
 {
-    char result1 = (verificacao1() == 1) ? 'livre' : 'ocupada');
-    Serial.println(result1);
-    char result2 = (verificacao2() == 1) ? 'livre' : 'ocupada');
-    Serial.println(result2);
+    // char result1 = (verificacao1() == 1) ? 'livre' : 'ocupada');
+    // Serial.println(result1);
+    // char result2 = (verificacao2() == 1) ? 'livre' : 'ocupada');
+    // Serial.println(result2);
+
+    char result = (verificacao1() == 1) ? status[0][2] = (char)'livre' : status[0][2] = (char)'ocupada';
+    result = (verificacao2() == 1) ? status[1][2] = (char)'livre' : status[1][2] = (char)'ocupada';
+    //Serial.print(status);
+    for (byte i = 0; i < sizeof(status); i = i + 1)
+    {
+        Serial.write((char)status[i]);
+    }
 }
 
 int sensor_morcego1(int pinotrig, int pinoecho)
