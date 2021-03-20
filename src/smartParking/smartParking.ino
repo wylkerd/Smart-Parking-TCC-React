@@ -63,8 +63,8 @@ void setup()
 void loop()
 {
 
-    verificacao1();
-    verificacao2();
+    (verificacao1() == 1) ? status[0][2] = 1 : status[0][2] = 0;
+    (verificacao2() == 1) ? status[1][2] = 1 : status[1][2] = 0;
     
     Serial.println("");
     Serial.print("Corredor");Serial.print("\t");Serial.print("Vaga");Serial.print("\t");Serial.println("Status");
@@ -86,24 +86,7 @@ int sensor_morcego1(int pinotrig, int pinoecho)
     return pulseIn(pinoecho, HIGH) / 58;
 }
 
-//int sensor_morcego1(int pinotrig, int pinoecho)
-//{
-//  // Clears the trigPin
-//  digitalWrite(pinotrig, LOW);
-//  delayMicroseconds(2);
-//  // Sets the trigPin on HIGH state for 10 micro seconds
-//  digitalWrite(pinotrig, HIGH);
-//  delayMicroseconds(10);
-//  digitalWrite(pinotrig, LOW);
-//  // Reads the echoPin, returns the sound wave travel time in microseconds
-//  duration = pulseIn(pinoecho, HIGH);
-//  // Calculating the distance
-//  distance= duration*0.034/2;
-//
-//  return distance;
-//}
-
-void verificacao1()
+int verificacao1()
 {
     int distancia1 = sensor_morcego1(trigPin1, echoPin1);
 
@@ -111,13 +94,13 @@ void verificacao1()
     {
         digitalWrite(ledGreen1, LOW);
         digitalWrite(ledRed1, HIGH);
-        status[0][2] = 0;
+        return 1;
     }
     else
     {
         digitalWrite(ledGreen1, HIGH);
         digitalWrite(ledRed1, LOW);
-        status[0][2] = 1;
+        return 0;
     }
     Serial.println(distancia1);
     delay(100);
@@ -136,24 +119,7 @@ int sensor_morcego2(int pinotrig, int pinoecho)
     return pulseIn(pinoecho, HIGH) / 58;
 }
 
-//int sensor_morcego2(int pinotrig, int pinoecho)
-//{
-//  // Clears the trigPin
-//  digitalWrite(pinotrig, LOW);
-//  delayMicroseconds(2);
-//  // Sets the trigPin on HIGH state for 10 micro seconds
-//  digitalWrite(pinotrig, HIGH);
-//  delayMicroseconds(10);
-//  digitalWrite(pinotrig, LOW);
-//  // Reads the echoPin, returns the sound wave travel time in microseconds
-//  duration = pulseIn(pinoecho, HIGH);
-//  // Calculating the distance
-//  distance= duration*0.034/2;
-//
-//  return distance;
-//}
-
-void verificacao2()
+int verificacao2()
 {
     int distancia2 = sensor_morcego2(trigPin2, echoPin2);
 
@@ -161,13 +127,13 @@ void verificacao2()
     {
         digitalWrite(ledGreen2, LOW);
         digitalWrite(ledRed2, HIGH);
-        status[1][2] = 0;
+        return 1;
     }
     else
     {
         digitalWrite(ledGreen2, HIGH);
         digitalWrite(ledRed2, LOW);
-        status[1][2] = 1;
+        return 0;
     }
     Serial.println(distancia2);
     delay(100);
