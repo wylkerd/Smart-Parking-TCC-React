@@ -12,12 +12,18 @@ const int echoPin1 = 53;
 const int trigPin2 = 4;
 const int echoPin2 = 52;
 
-//Demais componentes
-const int ledGreen1 = 19;
-const int ledRed1 = 18;
+const int trigPin3 = 5;
+const int echoPin3 = 50;
 
-const int ledGreen2 = 15;
-const int ledRed2 = 14;
+//Demais componentes
+const int ledGreen1 = 21;
+const int ledRed1 = 20;
+
+const int ledGreen2 = 19;
+const int ledRed2 = 18;
+
+const int ledGreen3 = 14;
+const int ledRed3 = 15;
 
 const int rows = 10;
 const int columns = 3;
@@ -53,6 +59,14 @@ void setup()
     // Configurações do LED2
     pinMode(ledGreen2, OUTPUT);
     pinMode(ledRed2, OUTPUT);
+
+    // Configurações do Sensor3
+    pinMode(trigPin3, OUTPUT);
+    pinMode(echoPin3, INPUT);
+
+    // Configurações do LED3
+    pinMode(ledGreen3, OUTPUT);
+    pinMode(ledRed3, OUTPUT);
 }
 
 void loop()
@@ -60,26 +74,16 @@ void loop()
 
     (verifier1() == 1) ? status[0][2] = 1 : status[0][2] = 0;
     (verifier2() == 1) ? status[1][2] = 1 : status[1][2] = 0;
+    (verifier3() == 1) ? status[2][2] = 1 : status[2][2] = 0;
 
     Serial.println("");
-    Serial.print("Corredor");
-    Serial.print("\t");
-    Serial.print("Vaga");
-    Serial.print("\t");
-    Serial.println("Status");
-    Serial.print(status[0][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[0][1]);
-    Serial.print("\t");
-    Serial.println(status[0][2]);
-    Serial.print(status[1][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[1][1]);
-    Serial.print("\t");
-    Serial.println(status[1][2]);
+    Serial.print("Corredor");Serial.print("\t");Serial.print("Vaga");Serial.print("\t");Serial.println("Status");
+    Serial.print(status[0][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[0][1]);Serial.print("\t");Serial.println(status[0][2]);
+    Serial.print(status[1][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[1][1]);Serial.print("\t");Serial.println(status[1][2]);
+    Serial.print(status[2][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[2][1]);Serial.print("\t");Serial.println(status[2][2]);
     Serial.println("***********************************************************************");
+
+    delay(300);
 }
 
 int sensor1(int pinotrig, int pinoecho)
@@ -141,5 +145,37 @@ int verifier2()
         return 0;
     }
     Serial.println(distance2);
+    delay(100);
+}
+
+/*************************************************************************/
+
+int sensor3(int pinotrig, int pinoecho)
+{
+    digitalWrite(pinotrig, LOW);
+    delayMicroseconds(2);
+    digitalWrite(pinotrig, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(pinotrig, LOW);
+
+    return pulseIn(pinoecho, HIGH) / 58;
+}
+
+int verifier3()
+{
+    int distance3 = sensor3(trigPin3, echoPin3);
+    if (distance3 > min_distance)
+    {
+        digitalWrite(ledGreen3, HIGH);
+        digitalWrite(ledRed3,LOW);
+        return 1;
+    }
+    else
+    {
+        digitalWrite(ledGreen3, LOW);
+        digitalWrite(ledRed3, HIGH);
+        return 0;
+    }
+    Serial.println(distance3);
     delay(100);
 }
