@@ -3,7 +3,7 @@
 /***********************************/
 
 //Configuração de Distancia Mínima em centimetros
-const int distancia_carro = 2;
+const int distancia_min = 2;
 
 long duration;
 int distance;
@@ -89,8 +89,7 @@ int sensor_morcego1(int pinotrig, int pinoecho)
 int verificacao1()
 {
     int distancia1 = sensor_morcego1(trigPin1, echoPin1);
-
-    if (distancia1 <= distancia_carro)
+    if (distancia1 > distancia_min)
     {
         digitalWrite(ledGreen1, LOW);
         digitalWrite(ledRed1, HIGH);
@@ -122,8 +121,7 @@ int sensor_morcego2(int pinotrig, int pinoecho)
 int verificacao2()
 {
     int distancia2 = sensor_morcego2(trigPin2, echoPin2);
-
-    if (distancia2 <= distancia_carro)
+    if (distancia2 > distancia_min)
     {
         digitalWrite(ledGreen2, LOW);
         digitalWrite(ledRed2, HIGH);
