@@ -8,33 +8,33 @@ const int distancia_carro = 2;
 //Configurações de Portas do Arduino
 
 //Sensor
-const int TRIG1 = 3;
-const int ECHO1 = 2;
+const int TRIG1 = 21;
+const int ECHO1 = 20;
 
-const int TRIG2 = 5;
-const int ECHO2 = 4;
+const int TRIG2 = 17;
+const int ECHO2 = 16;
 
 //Demais componentes
-const int ledGreen1 = 7;
-const int ledRed1 = 8;
+const int ledGreen1 = 19;
+const int ledRed1 = 18;
 
-const int ledGreen2 = 1;
-const int ledRed2 = 2;
+const int ledGreen2 = 15;
+const int ledRed2 = 14;
 
 const int rows = 10;
 const int columns = 3;
 
-char status[rows][columns] = {
-    {(char)'1', (char)'1', (char)'livre'},
-    {(char)'1', (char)'2', (char)'livre'},
-    {(char)'1', (char)'3', (char)'livre'},
-    {(char)'1', (char)'4', (char)'livre'},
-    {(char)'1', (char)'5', (char)'livre'},
-    {(char)'1', (char)'6', (char)'livre'},
-    {(char)'1', (char)'7', (char)'livre'},
-    {(char)'1', (char)'8', (char)'livre'},
-    {(char)'1', (char)'9', (char)'livre'},
-    {(char)'1', (char)'10', (char)'livre'}};
+int status[rows][columns] = {
+    {1, 1, 1},
+    {1, 2, 1},
+    {1, 3, 1},
+    {1, 4, 1},
+    {1, 5, 1},
+    {1, 6, 1},
+    {1, 7, 1},
+    {1, 8, 1},
+    {1, 9, 1},
+    {1, 10, 1}};
 
 void setup()
 {
@@ -60,13 +60,17 @@ void setup()
 void loop()
 {
 
-    char result = (verificacao1() == 1) ? status[0][2] = (char)'livre' : status[0][2] = (char)'ocupada';
-    result = (verificacao2() == 1) ? status[1][2] = (char)'livre' : status[1][2] = (char)'ocupada';
-    //Serial.print(status);
-    for (byte i = 0; i < sizeof(status); i = i + 1)
-    {
-        Serial.println(status[i]);
-    }
+    (verificacao1() == 1) ? status[0][2] = 1 : status[0][2] = 0;
+    (verificacao2() == 1) ? status[1][2] = 1 : status[1][2] = 0;
+    Serial.print("***********************************************************************");
+    Serial.println("");
+    Serial.print(status[0][0]);Serial.print("\t");Serial.print(status[0][1]);Serial.print("\t");Serial.println(status[0][2]);
+    Serial.print(status[1][0]);Serial.print("\t");Serial.print(status[1][1]);Serial.print("\t");Serial.println(status[1][2]);
+    
+//    for (byte i = 0; i < sizeof(status); i = i + 1)
+//    {
+//        Serial.println(status[i][1][2]);
+//    }
 }
 
 int sensor_morcego1(int pinotrig, int pinoecho)
@@ -88,13 +92,13 @@ int verificacao1()
     {
         digitalWrite(ledGreen1, LOW);
         digitalWrite(ledRed1, HIGH);
-        return 0;
+        return 1;
     }
     else
     {
         digitalWrite(ledGreen1, HIGH);
         digitalWrite(ledRed1, LOW);
-        return 1;
+        return 0;
     }
     delay(100);
 }
@@ -120,13 +124,13 @@ int verificacao2()
     {
         digitalWrite(ledGreen2, LOW);
         digitalWrite(ledRed2, HIGH);
-        return 0;
+        return 1;
     }
     else
     {
         digitalWrite(ledGreen2, HIGH);
         digitalWrite(ledRed2, LOW);
-        return 1;
+        return 0;
     }
     delay(100);
 }
