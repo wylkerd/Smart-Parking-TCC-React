@@ -78,9 +78,9 @@ void loop()
 
     Serial.println("");
     Serial.print("Corredor");Serial.print("\t");Serial.print("Vaga");Serial.print("\t");Serial.println("Status");
-    Serial.print(status[0][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[0][1]);Serial.print("\t");Serial.println(status[0][2]);
-    Serial.print(status[1][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[1][1]);Serial.print("\t");Serial.println(status[1][2]);
-    Serial.print(status[2][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[2][1]);Serial.print("\t");Serial.println(status[2][2]);
+    Serial.print(status[0][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[0][1]);Serial.print("\t");Serial.println(status[0][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[1][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[1][1]);Serial.print("\t");Serial.println(status[1][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[2][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[2][1]);Serial.print("\t");Serial.println(status[2][2] == 1 ? "Vaga livre" : "Vaga ocupada");
     Serial.println("***********************************************************************");
 
     delay(300);
