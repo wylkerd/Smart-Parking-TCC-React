@@ -3,19 +3,14 @@
 /***********************************/
 
 //Configuração de Distancia Mínima em centimetros
-const int distancia_min = 2;
-
-long duration;
-int distance;
-
-//Configurações de Portas do Arduino
+const int min_distance = 3;
 
 //Sensor
 const int trigPin1 = 2;
-const int echoPin1 = 40;
+const int echoPin1 = 53;
 
 const int trigPin2 = 4;
-const int echoPin2 = 36;
+const int echoPin2 = 52;
 
 //Demais componentes
 const int ledGreen1 = 19;
@@ -63,19 +58,31 @@ void setup()
 void loop()
 {
 
-    (verificacao1() == 1) ? status[0][2] = 1 : status[0][2] = 0;
-    (verificacao2() == 1) ? status[1][2] = 1 : status[1][2] = 0;
-    
+    (verifier1() == 1) ? status[0][2] = 1 : status[0][2] = 0;
+    (verifier2() == 1) ? status[1][2] = 1 : status[1][2] = 0;
+
     Serial.println("");
-    Serial.print("Corredor");Serial.print("\t");Serial.print("Vaga");Serial.print("\t");Serial.println("Status");
-    Serial.print(status[0][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[0][1]);Serial.print("\t");Serial.println(status[0][2]);
-    Serial.print(status[1][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[1][1]);Serial.print("\t");Serial.println(status[1][2]);
+    Serial.print("Corredor");
+    Serial.print("\t");
+    Serial.print("Vaga");
+    Serial.print("\t");
+    Serial.println("Status");
+    Serial.print(status[0][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[0][1]);
+    Serial.print("\t");
+    Serial.println(status[0][2]);
+    Serial.print(status[1][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[1][1]);
+    Serial.print("\t");
+    Serial.println(status[1][2]);
     Serial.println("***********************************************************************");
-    delay(100);
-    
 }
 
-int sensor_morcego1(int pinotrig, int pinoecho)
+int sensor1(int pinotrig, int pinoecho)
 {
     digitalWrite(pinotrig, LOW);
     delayMicroseconds(2);
@@ -86,10 +93,10 @@ int sensor_morcego1(int pinotrig, int pinoecho)
     return pulseIn(pinoecho, HIGH) / 58;
 }
 
-int verificacao1()
+int verifier1()
 {
-    int distancia1 = sensor_morcego1(trigPin1, echoPin1);
-    if (distancia1 > distancia_min)
+    int distance1 = sensor1(trigPin1, echoPin1);
+    if (distance1 > min_distance)
     {
         digitalWrite(ledGreen1, LOW);
         digitalWrite(ledRed1, HIGH);
@@ -101,13 +108,13 @@ int verificacao1()
         digitalWrite(ledRed1, LOW);
         return 0;
     }
-    Serial.println(distancia1);
+    Serial.println(distance1);
     delay(100);
 }
 
 /*************************************************************************/
 
-int sensor_morcego2(int pinotrig, int pinoecho)
+int sensor2(int pinotrig, int pinoecho)
 {
     digitalWrite(pinotrig, LOW);
     delayMicroseconds(2);
@@ -118,10 +125,10 @@ int sensor_morcego2(int pinotrig, int pinoecho)
     return pulseIn(pinoecho, HIGH) / 58;
 }
 
-int verificacao2()
+int verifier2()
 {
-    int distancia2 = sensor_morcego2(trigPin2, echoPin2);
-    if (distancia2 > distancia_min)
+    int distance2 = sensor2(trigPin2, echoPin2);
+    if (distance2 > min_distance)
     {
         digitalWrite(ledGreen2, LOW);
         digitalWrite(ledRed2, HIGH);
@@ -133,6 +140,6 @@ int verificacao2()
         digitalWrite(ledRed2, LOW);
         return 0;
     }
-    Serial.println(distancia2);
+    Serial.println(distance2);
     delay(100);
 }
