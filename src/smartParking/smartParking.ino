@@ -3,17 +3,17 @@
 /***********************************/
 
 //Configuração de Distancia Mínima em centimetros
-const int min_distance = 3;
+const int min_distance = 3.5;
 
 //Sensor
 const int trigPin1 = 2;
-const int echoPin1 = 53;
+const int echoPin1 = 23;
 
-const int trigPin2 = 4;
-const int echoPin2 = 52;
+const int trigPin2 = 3;
+const int echoPin2 = 22;
 
-const int trigPin3 = 5;
-const int echoPin3 = 50;
+const int trigPin3 = 4;
+const int echoPin3 = 24;
 
 //Demais componentes
 const int ledGreen1 = 21;
@@ -22,8 +22,8 @@ const int ledRed1 = 20;
 const int ledGreen2 = 19;
 const int ledRed2 = 18;
 
-const int ledGreen3 = 14;
-const int ledRed3 = 15;
+const int ledGreen3 = 15;
+const int ledRed3 = 16;
 
 const int rows = 10;
 const int columns = 3;
