@@ -126,13 +126,47 @@ void loop()
     (verifier6() == 1) ? status[5][2] = 1 : status[5][2] = 0;
 
     Serial.println("");
-    Serial.print("Corredor");Serial.print("\t");Serial.print("Vaga");Serial.print("\t");Serial.println("Status");
-    Serial.print(status[0][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[0][1]);Serial.print("\t");Serial.println(status[0][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[1][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[1][1]);Serial.print("\t");Serial.println(status[1][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[2][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[2][1]);Serial.print("\t");Serial.println(status[2][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[3][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[3][1]);Serial.print("\t");Serial.println(status[3][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[4][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[4][1]);Serial.print("\t");Serial.println(status[4][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[5][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[5][1]);Serial.print("\t");Serial.println(status[5][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print("Corredor");
+    Serial.print("\t");
+    Serial.print("Vaga");
+    Serial.print("\t");
+    Serial.println("Status");
+    Serial.print(status[0][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[0][1]);
+    Serial.print("\t");
+    Serial.println(status[0][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[1][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[1][1]);
+    Serial.print("\t");
+    Serial.println(status[1][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[2][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[2][1]);
+    Serial.print("\t");
+    Serial.println(status[2][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[3][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[3][1]);
+    Serial.print("\t");
+    Serial.println(status[3][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[4][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[4][1]);
+    Serial.print("\t");
+    Serial.println(status[4][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    Serial.print(status[5][0]);
+    Serial.print("\t");
+    Serial.print("\t");
+    Serial.print(status[5][1]);
+    Serial.print("\t");
+    Serial.println(status[5][2] == 1 ? "Vaga livre" : "Vaga ocupada");
     Serial.println("***********************************************************************");
 
     delay(100);
@@ -218,7 +252,7 @@ int verifier3()
     if (distance3 > min_distance)
     {
         digitalWrite(ledGreen3, HIGH);
-        digitalWrite(ledRed3,LOW);
+        digitalWrite(ledRed3, LOW);
         return 1;
     }
     else
@@ -251,7 +285,7 @@ int verifier4()
     if (distance4 > min_distance)
     {
         digitalWrite(ledGreen4, HIGH);
-        digitalWrite(ledRed4,LOW);
+        digitalWrite(ledRed4, LOW);
         return 1;
     }
     else
@@ -273,7 +307,7 @@ int sensor5(int pinotrig, int pinoecho)
     delayMicroseconds(10);
     digitalWrite(pinotrig, LOW);
     distance = pulseIn(pinoecho, HIGH) / 58;
-//    Serial.println(distance);
+    //    Serial.println(distance);
     return distance;
 }
 
@@ -283,7 +317,7 @@ int verifier5()
     if (distance5 > min_distance)
     {
         digitalWrite(ledGreen5, HIGH);
-        digitalWrite(ledRed5,LOW);
+        digitalWrite(ledRed5, LOW);
         return 1;
     }
     else
@@ -314,7 +348,7 @@ int verifier6()
     if (distance6 > min_distance)
     {
         digitalWrite(ledGreen6, HIGH);
-        digitalWrite(ledRed6,LOW);
+        digitalWrite(ledRed6, LOW);
         return 1;
     }
     else
