@@ -21,11 +21,11 @@ const int echoPin4 = 25;
 const int trigPin5 = 6;
 const int echoPin5 = 27;
 
-const int trigPin6 = 7;
-const int echoPin6 = 26;
+const int trigPin6 = 8;
+const int echoPin6 = 28;
 
-const int trigPin7 = 8;
-const int echoPin7 = 28;
+//const int trigPin7 = 8;
+//const int echoPin7 = 28;
 
 //LED´S
 const int ledGreen1 = 21;
@@ -43,11 +43,11 @@ const int ledRed4 = 52;
 const int ledGreen5 = 51;
 const int ledRed5 = 50;
 
-const int ledGreen6 = 49;
-const int ledRed6 = 48;
+const int ledGreen6 = 47;
+const int ledRed6 = 46;
 
-const int ledGreen7 = 47;
-const int ledRed7 = 46;
+//const int ledGreen7 = 47;
+//const int ledRed7 = 46;
 
 // Array multidimensional
 
@@ -117,14 +117,14 @@ void setup()
   // Configurações do LED6
   pinMode(ledGreen6, OUTPUT);
   pinMode(ledRed6, OUTPUT);
-/////////////////////////////////////////////////
-  // Configurações do Sensor7
-  pinMode(trigPin7, OUTPUT);
-  pinMode(echoPin7, INPUT);
-
-  // Configurações do LED7
-  pinMode(ledGreen7, OUTPUT);
-  pinMode(ledRed7, OUTPUT);
+///////////////////////////////////////////////////
+//  // Configurações do Sensor7
+//  pinMode(trigPin7, OUTPUT);
+//  pinMode(echoPin7, INPUT);
+//
+//  // Configurações do LED7
+//  pinMode(ledGreen7, OUTPUT);
+//  pinMode(ledRed7, OUTPUT);
 }
 
 void loop()
@@ -136,7 +136,7 @@ void loop()
     (verifier4() == 1) ? status[3][2] = 1 : status[3][2] = 0;
     (verifier5() == 1) ? status[4][2] = 1 : status[4][2] = 0;
     (verifier6() == 1) ? status[5][2] = 1 : status[5][2] = 0;
-    (verifier7() == 1) ? status[6][2] = 1 : status[6][2] = 0;
+//    (verifier7() == 1) ? status[6][2] = 1 : status[6][2] = 0;
 
     Serial.println("");
     Serial.print("Corredor");Serial.print("\t");Serial.print("Vaga");Serial.print("\t");Serial.println("Status");
@@ -146,7 +146,7 @@ void loop()
     Serial.print(status[3][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[3][1]);Serial.print("\t");Serial.println(status[3][2] == 1 ? "Vaga livre" : "Vaga ocupada");
     Serial.print(status[4][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[4][1]);Serial.print("\t");Serial.println(status[4][2] == 1 ? "Vaga livre" : "Vaga ocupada");
     Serial.print(status[5][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[5][1]);Serial.print("\t");Serial.println(status[5][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[6][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[6][1]);Serial.print("\t");Serial.println(status[6][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    //Serial.print(status[6][0]);Serial.print("\t");Serial.print("\t");Serial.print(status[6][1]);Serial.print("\t");Serial.println(status[6][2] == 1 ? "Vaga livre" : "Vaga ocupada");
     Serial.println("***********************************************************************");
 
     delay(100);
@@ -329,33 +329,33 @@ int verifier6()
     Serial.println(distance6);
     delay(100);
 }
-/*SENSOR 7****************************************************/
-int sensor7(int pinotrig, int pinoecho)
-{
-    digitalWrite(pinotrig, LOW);
-    delayMicroseconds(2);
-    digitalWrite(pinotrig, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(pinotrig, LOW);
-
-    return pulseIn(pinoecho, HIGH) / 58;
-}
-
-int verifier7()
-{
-    int distance7 = sensor7(trigPin7, echoPin7);
-    if (distance7 > min_distance)
-    {
-        digitalWrite(ledGreen7, HIGH);
-        digitalWrite(ledRed7,LOW);
-        return 1;
-    }
-    else
-    {
-        digitalWrite(ledGreen7, LOW);
-        digitalWrite(ledRed7, HIGH);
-        return 0;
-    }
-    Serial.println(distance7);
-    delay(100);
-}
+///*SENSOR 7****************************************************/
+//int sensor7(int pinotrig, int pinoecho)
+//{
+//    digitalWrite(pinotrig, LOW);
+//    delayMicroseconds(2);
+//    digitalWrite(pinotrig, HIGH);
+//    delayMicroseconds(10);
+//    digitalWrite(pinotrig, LOW);
+//
+//    return pulseIn(pinoecho, HIGH) / 58;
+//}
+//
+//int verifier7()
+//{
+//    int distance7 = sensor7(trigPin7, echoPin7);
+//    if (distance7 > min_distance)
+//    {
+//        digitalWrite(ledGreen7, HIGH);
+//        digitalWrite(ledRed7,LOW);
+//        return 1;
+//    }
+//    else
+//    {
+//        digitalWrite(ledGreen7, LOW);
+//        digitalWrite(ledRed7, HIGH);
+//        return 0;
+//    }
+//    Serial.println(distance7);
+//    delay(100);
+//}
