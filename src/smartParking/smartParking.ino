@@ -43,8 +43,8 @@ const int ledRed4 = 52;
 const int ledGreen5 = 51;
 const int ledRed5 = 50;
 
-const int ledGreen6 = 47;
-const int ledRed6 = 46;
+const int ledGreen6 = 49;
+const int ledRed6 = 48;
 
 //const int ledGreen7 = 47;
 //const int ledRed7 = 46;
