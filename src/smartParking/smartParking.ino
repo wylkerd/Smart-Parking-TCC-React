@@ -6,16 +6,16 @@
 const float min_distance = 3.5;
 
 //Sensor
-const int trigPin1 = 10;
+const int trigPin1 = 2;
 const int echoPin1 = 23;
 
-const int trigPin2 = 11;
+const int trigPin2 = 3;
 const int echoPin2 = 22;
 
-const int trigPin3 = 2;
+const int trigPin3 = 4;
 const int echoPin3 = 24;
 
-const int trigPin4 = 12;
+const int trigPin4 = 5;
 const int echoPin4 = 25;
 
 const int trigPin5 = 6;
