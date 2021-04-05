@@ -46,8 +46,8 @@ const int ledRed5 = 50;
 const int ledGreen6 = 49;
 const int ledRed6 = 48;
 
-const int ledGreen7 = 46;
-const int ledRed7 = 47;
+const int ledGreen7 = 47;
+const int ledRed7 = 46;
 
 // Array multidimensional
 
