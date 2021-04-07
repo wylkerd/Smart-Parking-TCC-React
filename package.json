@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/wylkerd/Smart-Parking-TCC/issues"
   },
-  "homepage": "https://github.com/wylkerd/Smart-Parking-TCC#readme"
+  "homepage": "https://github.com/wylkerd/Smart-Parking-TCC#readme",
+  "dependencies": {
+    "@types/socket.io": "^2.1.13",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "serialport": "^9.0.7",
+    "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/serialport": "^8.0.1"
+  }
 }
