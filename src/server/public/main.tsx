@@ -1,8 +1,8 @@
 const socket = io();
 
-const temperatureDisplay = document.getElementById('temperature');
+const statusDisplay = document.getElementById('status');
 
 socket.on('status', function (data) {
     console.log(data);
-    status.innerHTML = data;
+    statusDisplay.innerHTML = data;
 })
