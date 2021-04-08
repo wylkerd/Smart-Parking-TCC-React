@@ -5,13 +5,6 @@
             "name": "Arduino",
             "compilerPath": "C:\\Users\\wylke\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
             "compilerArgs": [
-                "-u",
-                "--language-force=c++",
-                "-f",
-                "-",
-                "--c++-kinds=svpf",
-                "--fields=KSTtzns",
-                "--line-directives",
                 "-std=gnu++11",
                 "-fpermissive",
                 "-fno-exceptions",

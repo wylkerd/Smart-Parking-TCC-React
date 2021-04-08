@@ -186,7 +186,6 @@ void loop()
     Serial.print(status[6][1]);
     Serial.print("\t");
     Serial.println(status[6][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.println("***********************************************************************");
 
     delay(100);
 }
@@ -201,7 +200,6 @@ int sensor1(int pinotrig, int pinoecho)
     digitalWrite(pinotrig, LOW);
 
     int distance = pulseIn(pinoecho, HIGH) / 58;
-    Serial.println(distance);
     return distance;
 }
 
