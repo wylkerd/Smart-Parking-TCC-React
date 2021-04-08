@@ -2,7 +2,10 @@ const socket = io();
 
 const statusDisplay = document.getElementById('status');
 
+var spots = new Array();
+
 socket.on('status', function (data) {
     console.log(data);
-    statusDisplay.innerHTML = data;
+    spots = data;
+    statusDisplay.innerHTML = spots.toString();
 })
