@@ -2,8 +2,9 @@
   "name": "SmartParking",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/server/index.tsx",
   "scripts": {
+    "start": "node ./src/server/index.tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -2,7 +2,7 @@ const socket = io();
 
 const temperatureDisplay = document.getElementById('temperature');
 
-socket.on('temp', function (data) {
+socket.on('status', function (data) {
     console.log(data);
-    temperature.innerHTML = `${data}°C`;
+    status.innerHTML = data;
 })

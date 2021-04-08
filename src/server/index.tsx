@@ -3,6 +3,7 @@ const express = require('express');
 
 const app = express();
 const server = http.createServer(app);
+const io = require('socket.io')(server);
 
 app.use(express.static(__dirname + '/public'));
 server.listen(3000, () => console.log('server on port 3000'));
@@ -21,6 +22,7 @@ parser.on('open', function () {
 
 parser.on('data', function (data) {
     console.log(data);
+    io.emit('status', data);
 });
 
 parser.on('error', (err) => console.log(err));
