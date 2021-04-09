@@ -21,12 +21,6 @@ parser.on('open', function () {
 });
 
 const condition = new Array(7);
-
-// function newArray() {
-//     parser.on('data', function (data) {
-//         condition[0] = data;
-//     });
-// }
 var guard = 0;
 parser.on('data', function (data) {
 
@@ -34,16 +28,17 @@ parser.on('data', function (data) {
         condition[guard] = data;
         index++;
         guard++;
+        if (guard == 7) {
+            guard = 0;
+        }
     }
 
+    if (condition.length == 7) {
+        io.emit('status', condition);
+        console.log(condition);
+        this.condition = [];
+    }
 
-
-    io.emit('status', condition);
-    console.log(condition);
-
-    // createArray();
-    // this.condition = [];
-    this.condition = [];
 });
 
 parser.on('error', (err) => console.log(err));
