@@ -66,6 +66,10 @@ int status[rows][columns] = {
     {1, 9, 1},
     {1, 10, 1}};
 
+String condition[rows] = {
+    String(""), String(""), String(""), String(""), String(""),
+    String(""), String(""), String(""), String(""), String("")};
+
 void setup()
 {
     Serial.begin(9600);
@@ -138,54 +142,18 @@ void loop()
     (verifier6() == 1) ? status[5][2] = 1 : status[5][2] = 0;
     (verifier7() == 1) ? status[6][2] = 1 : status[6][2] = 0;
 
-    Serial.println("");
-    Serial.print("Corredor");
-    Serial.print("\t");
-    Serial.print("Vaga");
-    Serial.print("\t");
-    Serial.println("Status");
-    Serial.print(status[0][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[0][1]);
-    Serial.print("\t");
-    Serial.println(status[0][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[1][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[1][1]);
-    Serial.print("\t");
-    Serial.println(status[1][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[2][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[2][1]);
-    Serial.print("\t");
-    Serial.println(status[2][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[3][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[3][1]);
-    Serial.print("\t");
-    Serial.println(status[3][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[4][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[4][1]);
-    Serial.print("\t");
-    Serial.println(status[4][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[5][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[5][1]);
-    Serial.print("\t");
-    Serial.println(status[5][2] == 1 ? "Vaga livre" : "Vaga ocupada");
-    Serial.print(status[6][0]);
-    Serial.print("\t");
-    Serial.print("\t");
-    Serial.print(status[6][1]);
-    Serial.print("\t");
-    Serial.println(status[6][2] == 1 ? "Vaga livre" : "Vaga ocupada");
+    condition[0] = (status[0][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[1] = (status[1][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[2] = (status[2][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[3] = (status[3][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[4] = (status[4][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[5] = (status[5][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[6] = (status[6][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+
+    for (int i = 0; i < 10; i++)
+    {
+        Serial.println(condition[i]);
+    }
 
     delay(100);
 }
