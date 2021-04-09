@@ -20,9 +20,30 @@ parser.on('open', function () {
     console.log('connection is opened');
 });
 
+const condition = new Array(7);
+
+// function newArray() {
+//     parser.on('data', function (data) {
+//         condition[0] = data;
+//     });
+// }
+var guard = 0;
 parser.on('data', function (data) {
-    console.log(data);
-    io.emit('status', data);
+
+    for (let index = 0; index < 1; index++) {
+        condition[guard] = data;
+        index++;
+        guard++;
+    }
+
+
+
+    io.emit('status', condition);
+    console.log(condition);
+
+    // createArray();
+    // this.condition = [];
+    this.condition = [];
 });
 
 parser.on('error', (err) => console.log(err));
