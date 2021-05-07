@@ -18,6 +18,7 @@ socket.on('status', function (data) {
     statusDisplay3.innerHTML = spots[2].toString();
     statusDisplay4.innerHTML = spots[3].toString();
     statusDisplay5.innerHTML = spots[4].toString();
-    statusDisplay6.innerHTML = spots[5].toString();
+    // statusDisplay6.innerHTML = spots[5].toString();
+    statusDisplay6.innerHTML = "Vaga livre";
     statusDisplay7.innerHTML = spots[6].toString();
 })
