@@ -1,7 +1,7 @@
 {
     "configuration": "cpu=atmega2560",
     "board": "arduino:avr:mega",
-    "port": "COM3",
+    "port": "COM4",
     "programmer": "arduino:arduinoisp",
     "sketch": "src\\smartParking\\smartParking.ino"
 }
