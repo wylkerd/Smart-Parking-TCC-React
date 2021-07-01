@@ -4,12 +4,15 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.6.4",
+    "@craco/craco": "^6.1.2",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@tailwindcss/forms": "^0.3.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "@types/react-router-dom": "^5.1.7",
+    "@types/tailwindcss": "^2.2.0",
     "chart": "^0.1.2",
     "chart.js": "^3.4.0",
     "framer-motion": "^4.1.17",
@@ -22,9 +25,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,6 +52,9 @@
     "@types/googlemaps": "^3.43.3",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
-    "@types/react-router": "^5.1.15"
+    "@types/react-router": "^5.1.15",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
   }
 }

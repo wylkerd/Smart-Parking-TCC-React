@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router';
-import { DashboardLayout } from './presentation/views/DashboardLayout';
+import DashboardLayout from './layouts/DashboardLayout';
 
 export function App() {
   return (

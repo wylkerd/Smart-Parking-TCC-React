@@ -3,18 +3,17 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 // components
 
-import AdminNavbar from 'components/Navbars/AdminNavbar.tsx';
-import Sidebar from 'components/Sidebar/Sidebar.tsx';
-import HeaderStats from 'components/Headers/HeaderStats.tsx';
-import FooterAdmin from 'components/Footers/FooterAdmin.tsx';
+import AdminNavbar from '../components/Navbars/AdminNavbar';
+import Sidebar from '../components/Sidebar/Sidebar';
+import HeaderStats from '../components/Headers/HeaderStats';
+import FooterAdmin from '../components/Footers/FooterAdmin';
 
 // views
-import Tables from 'views/admin/Tables.tsx';
+import Tables from '../views/Tables';
 
-import Dashboard from 'views/admin/Dashboard.tsx';
+import Dashboard from '../views/Dashboard';
 
-
-export default function Admin() {
+export default function DashboardLayout() {
   return (
     <>
       <Sidebar />
