@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import { Switch, Route } from 'react-router';
 import { DashboardLayout } from './presentation/views/DashboardLayout';
 
