@@ -26,6 +26,7 @@ app.use(function (req, res, next) {
 var port =  process.env.PORT || 8888;
 var server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
+// CORS configuration for socket
 var io = require('socket.io')(server, {
   log: false,
   agent: false,
