@@ -12,6 +12,13 @@ function CardStatus() {
     });
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log(response);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [response]);
+
   return (
     <p>
       {`${response}`}
