@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import socketIOClient from 'socket.io-client';
+const ENDPOINT = 'http://127.0.0.1:8888';
 
-import socketClient from 'socket.io-client';
-const SERVER = 'http://127.0.0.1:8888';
+function CardStatus() {
+  const [response, setResponse] = useState('');
 
-export function CardStatus() {
-  const socket = socketClient(SERVER);
-  socket.on('status', () => {
-    console.log(`I'm connected with the back-end`);
-  });
+  useEffect(() => {
+    const socket = socketIOClient(ENDPOINT);
+    socket.on('FromAPI', (data) => {
+      setResponse(data);
+    });
+  }, []);
+
   return (
-    <>
-    </>
+    <p>
+      {`${response}`}
+    </p>
   );
 }
+
+export default CardStatus;
