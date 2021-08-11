@@ -5,14 +5,14 @@ import React from 'react';
 // import CardLineChart from '../components/Cards/CardBarChart';
 // import CardBarChart from '../components/Cards/CardBarChart';
 // import CardPageVisits from '../components/Cards/CardPageVisits';
-// import CardSocialTraffic from '../components/Cards/CardSocialTraffic';
+import CardSocialTraffic from '../components/Cards/CardSocialTraffic';
 import CardStatus from '../components/Cards/CardStatus';
 
 export default function Dashboard() {
   return (
     <>
       <div className="flex flex-wrap">
-        <div className="w-full">
+        <div className="w-full px-4">
           <CardStatus />
         </div>
         {/* <div className="w-full xl:w-4/12 px-4">
@@ -23,10 +23,9 @@ export default function Dashboard() {
         {/* <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
           <CardPageVisits />
         </div> */}
-        {/* <div className="w-full xl:w-4/12 px-4">
+        <div className="w-full px-4">
           <CardSocialTraffic />
-          <CardStatus />
-        </div> */}
+        </div>
       </div>
     </>
   );
