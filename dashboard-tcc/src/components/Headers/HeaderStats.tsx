@@ -5,13 +5,15 @@ import React from 'react';
 import CardStats from '../Cards/CardStats';
 
 export default function HeaderStats() {
+  const semana = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado'];
+
   const newDate = new Date();
   const date = newDate.getDate();
   const month = newDate.getMonth() + 1;
   const year = newDate.getFullYear();
 
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed);
+  // const timeElapsed = Date.now();
+  // const today = new Date(timeElapsed);
   return (
     <>
       {/* Header */}
@@ -73,11 +75,11 @@ export default function HeaderStats() {
                   statSubtitle="Data"
                   statTitle={`${date}/${month}/${year}`}
                   statArrow="up"
-                  statPercent={`${today.toUTCString()}`}
-                  statPercentColor="text-emerald-500"
+                  statPercent={`${semana[newDate.getDay()]}`}
+                  statPercentColor="text-gray-500"
                   statDescripiron=""
                   statIconName="far fa-chart-bar"
-                  statIconColor="bg-red-500"
+                  statIconColor="bg-gray-300"
                 />
               </div>
             </div>
