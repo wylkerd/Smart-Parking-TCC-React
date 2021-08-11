@@ -1,6 +1,7 @@
 import React from 'react';
 import {createPopper} from '@popperjs/core';
 import {createRef} from 'react';
+import {FaUserAlt} from 'react-icons/fa';
 
 const UserDropdown = () => {
   // dropdown props
@@ -29,7 +30,7 @@ const UserDropdown = () => {
       >
         <div className="items-center flex">
           <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
-
+            <FaUserAlt color="black"/>
           </span>
         </div>
       </a>
