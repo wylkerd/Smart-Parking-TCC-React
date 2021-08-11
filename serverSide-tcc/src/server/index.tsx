@@ -62,10 +62,18 @@ parser.on('data', function(data) {
     }
   }
 
-  if (condition.length == 7) {
-    io.emit('FromAPI', condition);
-    console.log(condition);
-    this.condition = [];
+  const conditionOnHand = ['Vaga livre','Vaga livre','Vaga livre','Vaga ocupada','Vaga livre','Vaga ocupada','Vaga ocupada'];
+  // if (condition.length == 7) {
+  //   io.emit('FromAPI', condition);
+  //   console.log(condition);
+  //   this.condition = [];
+  // }
+  
+  // FALSE STATUS TO TESTS
+  if (conditionOnHand.length == 7) {
+    io.emit('FromAPI', conditionOnHand);
+    console.log(conditionOnHand);
+    this.conditionOnHand = [];
   }
 });
 
