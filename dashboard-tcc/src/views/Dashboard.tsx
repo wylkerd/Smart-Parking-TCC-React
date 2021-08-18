@@ -5,7 +5,7 @@ import React from 'react';
 // import CardLineChart from '../components/Cards/CardBarChart';
 // import CardBarChart from '../components/Cards/CardBarChart';
 // import CardPageVisits from '../components/Cards/CardPageVisits';
-import CardSocialTraffic from '../components/Cards/CardSocialTraffic';
+import Lotacao from '../components/Cards/Lotacao';
 import CardStatus from '../components/Cards/CardStatus';
 
 export default function Dashboard() {
@@ -24,7 +24,7 @@ export default function Dashboard() {
           <CardPageVisits />
         </div> */}
         <div className="w-full px-4">
-          <CardSocialTraffic />
+          <Lotacao />
         </div>
       </div>
     </>
