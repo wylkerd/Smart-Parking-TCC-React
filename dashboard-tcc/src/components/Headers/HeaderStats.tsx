@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import socketIOClient from 'socket.io-client';
+// const ENDPOINT = 'http://127.0.0.1:8888';
+const ENDPOINT = 'https://b7f463241de6.ngrok.io';
 
 // components
 
@@ -12,6 +15,57 @@ export default function HeaderStats() {
   const month = newDate.getMonth() + 1;
   const year = newDate.getFullYear();
 
+  const [response, setResponse] = useState('');
+
+  let livres = 0;
+  let ocupadas = 0;
+  let total = 0;
+
+  let porcentagemLivres = 0;
+  let porcentagemOcupadas = 0;
+
+  useEffect(() => {
+    const socket = socketIOClient(ENDPOINT);
+    socket.on('FromAPI', (data) => {
+      setResponse(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log(response);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [response]);
+
+
+  interface PropriedadesDaVaga {
+    vaga: number;
+    status: string;
+  }[];
+
+  // const vagasPorCorredor = 3;
+  const array: PropriedadesDaVaga[] = [];
+
+  for (let i = 0; i < response.length; i++) {
+    array.push({
+      vaga: i,
+      status: response[i],
+    });
+
+    if (array.map((l) => l.status)[i] === 'Vaga livre') {
+      livres++;
+    } else
+    if (array.map((o) => o.status)[i] === 'Vaga ocupada') {
+      ocupadas++;
+    }
+  }
+
+  total = array.map((t) => t.status).length;
+
+  porcentagemLivres = Math.round((livres / total) * 100);
+  porcentagemOcupadas = Math.round((ocupadas / total) * 100);
+
   // const timeElapsed = Date.now();
   // const today = new Date(timeElapsed);
   return (
@@ -22,61 +76,26 @@ export default function HeaderStats() {
           <div>
             {/* Card stats */}
             <div className="flex flex-wrap">
-              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <CardStats
-                  statSubtitle="NEW USERS"
-                  statTitle="2,356"
-                  statArrow="down"
-                  statPercent="3.48"
-                  statPercentColor="text-red-500"
-                  statDescripiron="Since last week"
-                  statIconName="fas fa-chart-pie"
-                  statIconColor="bg-orange-500"
-                />
-              </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <CardStats
-                  statSubtitle="SALES"
-                  statTitle="924"
-                  statArrow="down"
-                  statPercent="1.10"
-                  statPercentColor="text-orange-500"
-                  statDescripiron="Since yesterday"
-                  statIconName="fas fa-users"
-                  statIconColor="bg-pink-500"
-                />
-              </div> */}
-              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <CardStats
-                  statSubtitle="PERFORMANCE"
-                  statTitle="49,65%"
-                  statArrow="up"
-                  statPercent="12"
-                  statPercentColor="text-emerald-500"
-                  statDescripiron="Since last month"
-                  statIconName="fas fa-percent"
-                  statIconColor="bg-lightBlue-500"
-                />
-              </div> */}
-              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <CardStats
-                  statSubtitle="Data"
-                  statTitle={`${date}/${month}/${year}`}
-                  statArrow="up"
-                  statPercent={`${today.toUTCString()}`}
-                  statPercentColor="text-emerald-500"
-                  statDescripiron=""
-                  statIconName="far fa-chart-bar"
-                  statIconColor="bg-red-500"
-                />
-              </div> */}
-              <div className="w-full px-4">
+
+              <div className="w-full xl:w-6/12 px-4">
                 <CardStats
                   statSubtitle="Data"
                   statTitle={`${date}/${month}/${year}`}
                   statArrow="up"
                   statPercent={`${semana[newDate.getDay()]}`}
                   statPercentColor="text-gray-500"
+                  statDescripiron=""
+                  statIconName="far fa-chart-bar"
+                  statIconColor="bg-gray-300"
+                />
+              </div>
+              <div className="w-full xl:w-6/12 px-4">
+                <CardStats
+                  statSubtitle="Condição Atual"
+                  statTitle={`O estacionamento está com ${porcentagemLivres}% da capacidade livre!`}
+                  statArrow="up"
+                  statPercent={`Vagas ocupadas em ${porcentagemOcupadas}%`}
+                  statPercentColor="text-red-500"
                   statDescripiron=""
                   statIconName="far fa-chart-bar"
                   statIconColor="bg-gray-300"
