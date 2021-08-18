@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import socketIOClient from 'socket.io-client';
 // const ENDPOINT = 'http://127.0.0.1:8888';
-const ENDPOINT = 'http://46627ef9f67c.ngrok.io';
+const ENDPOINT = 'http://b7f463241de6.ngrok.io';
 
 export default function CardStatus() {
   const [response, setResponse] = useState('');

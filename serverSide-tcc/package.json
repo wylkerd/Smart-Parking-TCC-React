@@ -20,10 +20,12 @@
   "homepage": "https://github.com/wylkerd/Smart-Parking-TCC#readme",
   "dependencies": {
     "@types/socket.io": "^2.1.13",
+    "connect": "^3.7.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "serialport": "^9.0.7",
+    "serve-static": "^1.14.1",
     "socket.io": "^4.0.1"
   },
   "devDependencies": {

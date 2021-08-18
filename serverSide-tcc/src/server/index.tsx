@@ -65,6 +65,10 @@ parser.on('data', function(data) {
   const conditionOnHand = ['Vaga livre','Vaga livre','Vaga livre','Vaga ocupada','Vaga livre','Vaga ocupada','Vaga ocupada'];
   if (condition.length == 7) {
     io.emit('FromAPI', condition);
+    app.get('/', function (req, res) {
+      res.send(condition);
+    });
+    
     console.log(condition);
     this.condition = [];
   }
