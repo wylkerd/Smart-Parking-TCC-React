@@ -20,4 +20,4 @@
 
 - Como usar? https://medium.com/desenvolvendo-com-paixao/ngrok-do-localhost-para-o-mundo-5445ad08419
 
-- Após iniciar, basta alterar o ENDPOINT e enviar o repositório para ser atualizado pelo Netlify
+- Após iniciar, basta alterar a url de ENDPOINT, no app React e enviar o repositório para ser atualizado pelo Netlify
