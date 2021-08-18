@@ -20,4 +20,6 @@
 
 - Como usar? https://medium.com/desenvolvendo-com-paixao/ngrok-do-localhost-para-o-mundo-5445ad08419
 
+- Rodar em um novo CMD qualquer o comando "ngrok http 8888" e passar a nova URL de acesso HTTPS
+
 - Após iniciar, basta alterar a url de ENDPOINT, no app React e enviar o repositório para ser atualizado pelo Netlify
