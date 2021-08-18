@@ -8,6 +8,10 @@ export default function Lotacao() {
 
   let livres = 0;
   let ocupadas = 0;
+  let total = 0;
+
+  let porcentagemLivres = 0;
+  let porcentagemOcupadas = 0;
 
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
@@ -38,13 +42,17 @@ export default function Lotacao() {
       status: response[i],
     });
 
-    if (array.map((x) => x.status)[i] === 'Vaga livre') {
+    if (array.map((l) => l.status)[i] === 'Vaga livre') {
       livres++;
-    } else if (array.map((x) => x.status)[i] === 'Vaga ocupada') {
+    } else if (array.map((o) => o.status)[i] === 'Vaga ocupada') {
       ocupadas++;
     }
   }
 
+  total = array.map((t) => t.status).length;
+
+  porcentagemLivres = Math.round((livres / total) * 100);
+  porcentagemOcupadas = Math.round((ocupadas / total) * 100);
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
@@ -89,11 +97,11 @@ export default function Lotacao() {
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <div className="flex items-center">
-                    <span className="mr-2">90%</span>
+                    <span className="mr-2">{porcentagemLivres}%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
                         <div
-                          style={{width: '90%'}}
+                          style={{width: `${porcentagemLivres}%`}}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
                         ></div>
                       </div>
@@ -110,11 +118,11 @@ export default function Lotacao() {
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <div className="flex items-center">
-                    <span className="mr-2">5%</span>
+                    <span className="mr-2">{porcentagemOcupadas}%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200">
                         <div
-                          style={{width: '5%'}}
+                          style={{width: `${porcentagemOcupadas}%`}}
                           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500"
                         ></div>
                       </div>
