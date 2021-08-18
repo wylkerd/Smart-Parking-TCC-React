@@ -120,10 +120,10 @@ export default function Lotacao() {
                   <div className="flex items-center">
                     <span className="mr-2">{porcentagemOcupadas}%</span>
                     <div className="relative w-full">
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200">
+                      <div className="overflow-hidden h-2 text-xs flex rounded bg-yellow-200">
                         <div
                           style={{width: `${porcentagemOcupadas}%`}}
-                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500"
+                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-yellow-400"
                         ></div>
                       </div>
                     </div>
