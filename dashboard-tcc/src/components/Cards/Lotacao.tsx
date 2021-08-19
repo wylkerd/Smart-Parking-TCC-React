@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import socketIOClient from 'socket.io-client';
+import env from 'react-dotenv';
 // const ENDPOINT = 'http://127.0.0.1:8888';
 // const ENDPOINT = 'https://b7f463241de6.ngrok.io';
 
-const ENDPOINT = process.env.API_URL || 'http://127.0.0.1:8888';
+const ENDPOINT = env.API_URL || 'http://127.0.0.1:8888';
 
 
 export default function Lotacao() {
