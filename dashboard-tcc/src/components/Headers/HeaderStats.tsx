@@ -97,7 +97,7 @@ export default function HeaderStats() {
                   statTitle={`O estacionamento está com ${porcentagemLivres}% da capacidade livre!`}
                   statArrow="up"
                   statPercent={`Vagas ocupadas em ${porcentagemOcupadas}%`}
-                  statPercentColor="text-red-500"
+                  statPercentColor="text-pink-500"
                   statDescripiron=""
                   statIconName="far fa-chart-bar"
                   statIconColor="bg-gray-300"

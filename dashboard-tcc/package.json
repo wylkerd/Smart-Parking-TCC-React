@@ -75,7 +75,6 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-
   "react-dotenv": {
     "API_URL": "https://d8feaaee8fb7.ngrok.io"
   }
