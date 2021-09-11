@@ -58,7 +58,7 @@ export default function CardLineChardInsight() {
             </div>
           </div>
         </div>
-        <div className="pt-4">
+        <div>
           <ResponsiveContainer width={'100%'} height={250}>
             <LineChart
               width={1500}
