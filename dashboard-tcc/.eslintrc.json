@@ -21,6 +21,7 @@
     ],
     "rules": {
         "require-jsdoc" : 0,
-        "max-len": [2, {"code": 400, "tabWidth": 4, "ignoreUrls": true}]
+        "max-len": [2, {"code": 400, "tabWidth": 4, "ignoreUrls": true}],
+        "linebreak-style":"off"
     }
 }
