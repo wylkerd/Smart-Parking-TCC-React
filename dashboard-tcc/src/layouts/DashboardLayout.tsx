@@ -9,8 +9,6 @@ import HeaderStats from '../components/Headers/HeaderStats';
 import FooterAdmin from '../components/Footers/FooterAdmin';
 
 // views
-import Tables from '../views/Tables';
-
 import Dashboard from '../views/Dashboard';
 
 export default function DashboardLayout() {
@@ -24,7 +22,6 @@ export default function DashboardLayout() {
         <div className="px-4 md:px-10 mx-auto w-full -m-24">
           <Switch>
             <Route path="/monitoring" exact component={Dashboard} />
-            <Route path="/monitoring" exact component={Tables} />
             <Redirect from="/admin" to="/monitoring" />
             <Redirect from="/" to="/monitoring" />
           </Switch>
