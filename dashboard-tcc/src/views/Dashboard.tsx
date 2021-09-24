@@ -4,6 +4,7 @@ import React from 'react';
 import Lotacao from '../components/Cards/Lotacao';
 import CardStatus from '../components/Cards/CardStatus';
 import CardLineChardInsight from '../components/Cards/CardLineChardInsight';
+import CardInsights from '../components/Cards/CardInsights';
 
 export default function Dashboard() {
   return (
@@ -19,6 +20,7 @@ export default function Dashboard() {
         </div>
         <div className="w-full px-4">
           <CardLineChardInsight />
+          <CardInsights />
         </div>
       </div>
     </>
