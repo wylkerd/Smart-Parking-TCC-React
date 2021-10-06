@@ -10,6 +10,8 @@ window.env = {
   "ComSpec": "C:\\Windows\\system32\\cmd.exe",
   "dp0": "F:\\wylke\\Documents\\projects\\Smart-Parking-TCC\\dashboard-tcc\\node_modules\\.bin\\",
   "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+  "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+  "FPS_BROWSER_USER_PROFILE_STRING": "Default",
   "GIT_ASKPASS": "c:\\Users\\wylke\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
   "HOME": "C:\\Users\\wylke",
   "HOMEDRIVE": "C:",

@@ -40,10 +40,11 @@ export default function CardStatus() {
     }
     return array.map((dados, index) => {
       const {status, vaga} = dados; // destructuring
+      const corredor = index < 5 ? '1' : '2';
       return (
         <tr key={vaga}>
           <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
-            1
+            {corredor}
           </th>
           <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
             {vaga + 1}
