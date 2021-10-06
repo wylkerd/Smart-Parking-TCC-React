@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import socketIOClient from 'socket.io-client';
 import env from 'react-dotenv';
-// const ENDPOINT = 'http://127.0.0.1:8888';
-// const ENDPOINT = 'https://b7f463241de6.ngrok.io';
 
 const ENDPOINT = env.API_URL;
+// const ENDPOINT = 'http://127.0.0.1:8888';
 
 export default function CardStatus() {
   const [response, setResponse] = useState('');
@@ -43,13 +42,13 @@ export default function CardStatus() {
       const {status, vaga} = dados; // destructuring
       return (
         <tr key={vaga}>
-          <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+          <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
             1
           </th>
-          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
             {vaga + 1}
           </td>
-          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
             {status == 'Vaga livre' ? 'Livre' : 'Ocupada' }
           </td>
         </tr>

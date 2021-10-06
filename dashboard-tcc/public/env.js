@@ -1,7 +1,7 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\wylke\\AppData\\Roaming",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_14276_ZRDSFYEAAVFDCWLY",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_19356_LZKSNVJNXYXUALTK",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
   "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
@@ -238,7 +238,7 @@ window.env = {
   "SystemRoot": "C:\\Windows",
   "TEMP": "C:\\Users\\wylke\\AppData\\Local\\Temp",
   "TERM_PROGRAM": "vscode",
-  "TERM_PROGRAM_VERSION": "1.60.1",
+  "TERM_PROGRAM_VERSION": "1.60.2",
   "TMP": "C:\\Users\\wylke\\AppData\\Local\\Temp",
   "USERDOMAIN": "DESKTOP-WYLKERD",
   "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-WYLKERD",
