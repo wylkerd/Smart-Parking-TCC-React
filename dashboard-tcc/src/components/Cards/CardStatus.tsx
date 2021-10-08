@@ -42,14 +42,14 @@ export default function CardStatus() {
       const {status, vaga} = dados; // destructuring
       const corredor = index < 5 ? '1' : '2';
       return (
-        <tr key={vaga}>
-          <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
+        <tr key={vaga} className={( status == 'Vaga livre' ? 'bg-green-500 bg-opacity-10' : 'bg-red-100 bg-opacity-1')}>
+          <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-800' : 'text-red-800') }>
             {corredor}
           </th>
-          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
+          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-800' : 'text-red-800') }>
             {vaga + 1}
           </td>
-          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-500' : 'text-red-500') }>
+          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-800' : 'text-red-800') }>
             {status == 'Vaga livre' ? 'Livre' : 'Ocupada' }
           </td>
         </tr>
