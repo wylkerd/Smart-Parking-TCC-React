@@ -6,43 +6,63 @@ export default function CardLineChardInsight() {
   const data = [
     {
       'dayOfMonth': '01/09',
-      '17h': 10,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '02/09',
-      '17h': 5,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '03/09',
-      '17h': 10,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '04/09',
-      '17h': 5,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '05/09',
-      '17h': 4,
+      '8h': 4,
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '06/09',
-      '17h': 3,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '07/09',
-      '17h': 5,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '08/09',
-      '17h': 10,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '09/09',
-      '17h': 3,
+      '8h': Math.floor(Math.random() * 11),
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
     {
       'dayOfMonth': '10/09',
-      '17h': 7,
+      '8h': 7,
+      '12h': Math.floor(Math.random() * 11),
+      '17h': Math.floor(Math.random() * 11),
     },
   ];
 
@@ -70,8 +90,10 @@ export default function CardLineChardInsight() {
               <XAxis dataKey="dayOfMonth" />
               <YAxis />
               <Tooltip />
-              <Legend verticalAlign="bottom" height={36} />
-              <Line type="monotone" dataKey="17h" stroke="#8884d8" />
+              <Legend verticalAlign="top" height={36} />
+              <Line type="monotone" dataKey="8h" stroke="#237a1b" />
+              <Line type="monotone" dataKey="12h" stroke="#2b2685" />
+              <Line type="monotone" dataKey="17h" stroke="#9c641b" />
             </LineChart>
           </ResponsiveContainer>
         </div>

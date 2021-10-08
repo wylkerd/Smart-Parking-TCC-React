@@ -43,13 +43,13 @@ export default function CardStatus() {
       const corredor = index < 5 ? '1' : '2';
       return (
         <tr key={vaga} className={( status == 'Vaga livre' ? 'bg-green-500 bg-opacity-10' : 'bg-red-100 bg-opacity-1')}>
-          <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-800' : 'text-red-800') }>
+          <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-800 font-bold' : 'text-red-800 font-bold') }>
             {corredor}
           </th>
-          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-800' : 'text-red-800') }>
+          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-800 font-bold' : 'text-red-800 font-bold') }>
             {vaga + 1}
           </td>
-          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-800' : 'text-red-800') }>
+          <td className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ' + (status == 'Vaga livre' ? 'text-green-800 font-bold' : 'text-red-800 font-bold') }>
             {status == 'Vaga livre' ? 'Livre' : 'Ocupada' }
           </td>
         </tr>
