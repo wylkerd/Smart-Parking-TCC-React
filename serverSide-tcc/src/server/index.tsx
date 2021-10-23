@@ -50,20 +50,20 @@ const Readline = SerialPort.parsers.Readline;
 const usbport = new SerialPort('COM4');  
 const parser = usbport.pipe(new Readline({ delimiter: '\r\n' })); 
 
-const condition = new Array(8);
+const condition = new Array(6);
 let guard = 0;
 parser.on('data', function(data) {
   for (let index = 0; index < 1; index++) {
     condition[guard] = data;
     index++;
     guard++;
-    if (guard == 8) {
+    if (guard == 6) {
       guard = 0;
     }
   }
 
   const conditionOnHand = ['Vaga livre','Vaga livre','Vaga livre','Vaga ocupada','Vaga livre','Vaga ocupada','Vaga ocupada'];
-  if (condition.length == 8) {
+  if (condition.length == 6) {
     io.emit('FromAPI', condition);
     app.get('/', function (req, res) {
       res.send(condition);

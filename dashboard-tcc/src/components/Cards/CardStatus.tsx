@@ -40,7 +40,8 @@ export default function CardStatus() {
     }
     return array.map((dados, index) => {
       const {status, vaga} = dados; // destructuring
-      const corredor = index < 5 ? '1' : '2';
+      // const corredor = index < 5 ? '1' : '2';
+      const corredor = '1';
       return (
         <tr key={vaga} className={( status == 'Vaga livre' ? 'bg-green-500 bg-opacity-10' : 'bg-red-100 bg-opacity-1')}>
           <th className= {'border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left ' + (status == 'Vaga livre' ? 'text-green-800 font-bold' : 'text-red-800 font-bold') }>

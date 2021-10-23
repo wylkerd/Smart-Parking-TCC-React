@@ -166,8 +166,8 @@ void loop()
     condition[5] = (status[5][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
     condition[6] = (status[6][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
     condition[7] = (status[7][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
-
-    for (int i = 0; i < 10; i++)
+// MOSTRANDO APENAS 6 CONDITIOS
+    for (int i = 0; i < 6; i++)
     {
         Serial.println(condition[i]);
     }
