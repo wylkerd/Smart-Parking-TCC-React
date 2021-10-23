@@ -1,4 +1,4 @@
-/***********************************/
+  /***********************************/
 /*          SMART PARKING          */
 /***********************************/
 
@@ -27,6 +27,9 @@ const int echoPin6 = 28;
 const int trigPin7 = 7;
 const int echoPin7 = 29;
 
+const int trigPin8 = 9;
+const int echoPin8 = 26;
+
 //LED´S
 const int ledGreen1 = 21;
 const int ledRed1 = 20;
@@ -48,6 +51,9 @@ const int ledRed6 = 48;
 
 const int ledGreen7 = 47;
 const int ledRed7 = 46;
+
+const int ledGreen8 = 44;
+const int ledRed8 = 45;
 
 // Array multidimensional
 
@@ -129,6 +135,15 @@ void setup()
     // Configurações do LED7
     pinMode(ledGreen7, OUTPUT);
     pinMode(ledRed7, OUTPUT);
+
+    ///////////////////////////////////////////////////
+    // Configurações do Sensor8
+    pinMode(trigPin8, OUTPUT);
+    pinMode(echoPin8, INPUT);
+
+    // Configurações do LED8
+    pinMode(ledGreen8, OUTPUT);
+    pinMode(ledRed8, OUTPUT);
 }
 
 void loop()
@@ -141,6 +156,7 @@ void loop()
     (verifier5() == 1) ? status[4][2] = 1 : status[4][2] = 0;
     (verifier6() == 1) ? status[5][2] = 1 : status[5][2] = 0;
     (verifier7() == 1) ? status[6][2] = 1 : status[6][2] = 0;
+    (verifier8() == 1) ? status[7][2] = 1 : status[7][2] = 0;
 
     condition[0] = (status[0][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
     condition[1] = (status[1][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
@@ -149,6 +165,7 @@ void loop()
     condition[4] = (status[4][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
     condition[5] = (status[5][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
     condition[6] = (status[6][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
+    condition[7] = (status[7][2] == 1 ? String("Vaga livre") : String("Vaga ocupada"));
 
     for (int i = 0; i < 10; i++)
     {
@@ -372,5 +389,35 @@ int verifier7()
         return 0;
     }
     Serial.println(distance7);
+    delay(100);
+}
+/*SENSOR 8****************************************************/
+int sensor8(int pinotrig, int pinoecho)
+{
+    digitalWrite(pinotrig, LOW);
+    delayMicroseconds(2);
+    digitalWrite(pinotrig, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(pinotrig, LOW);
+
+    return pulseIn(pinoecho, HIGH) / 58;
+}
+
+int verifier8()
+{
+    int distance8 = sensor8(trigPin8, echoPin8);
+    if (distance8 > min_distance)
+    {
+        digitalWrite(ledGreen8, HIGH);
+        digitalWrite(ledRed8, LOW);
+        return 1;
+    }
+    else
+    {
+        digitalWrite(ledGreen8, LOW);
+        digitalWrite(ledRed8, HIGH);
+        return 0;
+    }
+    Serial.println(distance8);
     delay(100);
 }
