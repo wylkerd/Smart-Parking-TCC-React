@@ -5,64 +5,64 @@ export default function CardLineChardInsight() {
   // quantos carros havia as 12h durante 10 dias
   const data = [
     {
-      'dayOfMonth': '01/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '27/09',
+      '9h': 14,
+      '12h': 17,
+      '17h': 11,
     },
     {
-      'dayOfMonth': '02/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '28/09',
+      '9h': 13,
+      '12h': 23,
+      '17h': 19,
     },
     {
-      'dayOfMonth': '03/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '29/09',
+      '9h': 20,
+      '12h': 16,
+      '17h': 19,
     },
     {
-      'dayOfMonth': '04/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '30/09',
+      '9h': 17,
+      '12h': 15,
+      '17h': 13,
     },
     {
-      'dayOfMonth': '05/09',
-      '8h': 4,
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '01/10',
+      '9h': 34,
+      '12h': 43,
+      '17h': 24,
     },
     {
-      'dayOfMonth': '06/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '04/10',
+      '9h': 25,
+      '12h': 27,
+      '17h': 15,
     },
     {
-      'dayOfMonth': '07/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '05/10',
+      '9h': 17,
+      '12h': 25,
+      '17h': 16,
     },
     {
-      'dayOfMonth': '08/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '06/10',
+      '9h': 18,
+      '12h': 21,
+      '17h': 14,
     },
     {
-      'dayOfMonth': '09/09',
-      '8h': Math.floor(Math.random() * 11),
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '07/10',
+      '9h': 42,
+      '12h': 38,
+      '17h': 25,
     },
     {
-      'dayOfMonth': '10/09',
-      '8h': 7,
-      '12h': Math.floor(Math.random() * 11),
-      '17h': Math.floor(Math.random() * 11),
+      'dayOfMonth': '08/10',
+      '9h': 39,
+      '12h': 40,
+      '17h': 28,
     },
   ];
 
@@ -73,7 +73,7 @@ export default function CardLineChardInsight() {
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Insight dos ultimos 10 dias
+                Insight dos últimos 10 dias
               </h3>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function CardLineChardInsight() {
               <YAxis />
               <Tooltip />
               <Legend verticalAlign="top" height={36} />
-              <Line type="monotone" dataKey="8h" stroke="#237a1b" />
+              <Line type="monotone" dataKey="9h" stroke="#237a1b" />
               <Line type="monotone" dataKey="12h" stroke="#2b2685" />
               <Line type="monotone" dataKey="17h" stroke="#9c641b" />
             </LineChart>

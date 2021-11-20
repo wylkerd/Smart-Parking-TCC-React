@@ -51,7 +51,7 @@ export default function CardPageVisits() {
                   Últimos 10 dias
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  97
+                  688
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   {/* <i className="fas fa-arrow-down text-orange-500 mr-4"></i> */}
@@ -72,7 +72,7 @@ export default function CardPageVisits() {
                   Ultimo mês
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  340
+                  2.408
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <FaArrowUp color="green"/>
@@ -91,7 +91,7 @@ export default function CardPageVisits() {
                   Últimos 3 meses
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  1430
+                  7.224
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <FaArrowUp color="orange"/>
