@@ -6,7 +6,7 @@ const ENDPOINT = env.API_URL;
 // const ENDPOINT = 'http://127.0.0.1:8888';
 
 export default function CardStatus() {
-  const [response, setResponse] = useState('');
+  const [response, setResponse] = useState('' || ['Vaga livre', 'Vaga livre', 'Vaga livre', 'Vaga ocupada', 'Vaga livre', 'Vaga ocupada']);
 
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);

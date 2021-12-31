@@ -17,7 +17,7 @@ export default function HeaderStats() {
   const month = newDate.getMonth() + 1;
   const year = newDate.getFullYear();
 
-  const [response, setResponse] = useState('');
+  const [response, setResponse] = useState('' || ['Vaga livre', 'Vaga livre', 'Vaga livre', 'Vaga ocupada', 'Vaga livre', 'Vaga ocupada', 'Vaga ocupada']);
 
   let livres = 0;
   let ocupadas = 0;
